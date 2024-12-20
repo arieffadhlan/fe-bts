@@ -6,6 +6,8 @@ import SignInPage from "@/app/auth/sign-in";
 import DashboardPage from "@/app/dashboard";
 import DashboardLayout from "@/features/dashboard/components/DashboardLayout";
 import CreateChecklistPage from "@/app/dashboard/create";
+import ChecklistDetailPage from "@/app/dashboard/detail";
+import ChecklistCreateItemsPage from "@/app/dashboard/items/create";
 
 const AppRouter = () => {
   const publicRoutes = [
@@ -25,7 +27,9 @@ const AppRouter = () => {
       ),
       children: [
         { index: true, element: <DashboardPage /> },
-        { path: '/create', element: <CreateChecklistPage />, index: true },
+        { path: '/:id', element: <ChecklistDetailPage />, },
+        { path: '/create', element: <CreateChecklistPage />, },
+        { path: '/:id/create', element: <ChecklistCreateItemsPage />, },
       ]
     }
   ];

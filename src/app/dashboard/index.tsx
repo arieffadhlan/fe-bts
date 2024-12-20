@@ -39,7 +39,7 @@ const ChecklistPage = () => {
       {checklist && checklist.length > 0 ? (
         <div className="flex flex-wrap gap-5">
           {checklist.map((note, index) => (
-            <div key={index} className="relative min-w-60 min-h-28 border border-solid border-gray-300 rounded-md bg-white transition-shadow duration-300 ease hover:shadow">
+            <Link to={`/${note.id}`} key={index} className="relative min-w-60 min-h-28 border border-solid border-gray-300 rounded-md bg-white transition-shadow duration-300 ease hover:shadow">
               <div className="block px-4 py-3 h-full">
                 <div className="font-semibold text-base text-black">{note.name}</div>
                 {note.items ? (
@@ -56,7 +56,7 @@ const ChecklistPage = () => {
               <button onClick={() => removeChecklist(note.id)} className="absolute z-10 right-0 bottom-0 px-4 py-3 cursor-pointer">
                 <Trash2Icon className="stroke-[1.5px] w-4 h-4 mt-4 text-black" />
               </button>
-            </div>
+            </Link>
           ))}
         </div>
       ) : (
