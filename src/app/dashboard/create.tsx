@@ -7,6 +7,7 @@ import { addChecklist } from "@/features/checklist/api";
 
 const CreateChecklistPage: React.FC = () => {
   const navigate = useNavigate();
+  
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     
@@ -22,7 +23,7 @@ const CreateChecklistPage: React.FC = () => {
     event.currentTarget.reset();
 
     toast.success("Checklist created!", {
-      onClose: () => navigate("/checklist", { replace: true }),
+      onClose: () => navigate("/", { replace: true }),
       autoClose: 1000
     });
   } 

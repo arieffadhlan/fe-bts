@@ -2,7 +2,6 @@ import { NavLink } from "react-router";
 
 const links = [
   { url: "/", name: "Dashboard" },
-  { url: "/checklist", name: "My Checklist" }
 ];
 
 const DashboardNavbar = () => {
